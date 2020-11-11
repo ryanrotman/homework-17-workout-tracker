@@ -12,7 +12,8 @@ const CardioeSchema = new Schema({
         type: String,
         trim: true,
         required: "Must include a workout name"
-    }, duration: {
+    },
+    duration: {
         type: Number,
         required: true
     },
