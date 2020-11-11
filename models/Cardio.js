@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
 
-const CardioeSchema = new Schema({
+const CardioSchema = new Schema({
     type: {
         type: String,
         trim: true,
