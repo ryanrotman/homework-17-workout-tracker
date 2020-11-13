@@ -32,13 +32,48 @@ app.get("/stats", (req, res) => {
     res.sendFile(path.join(__dirname + "/public/stats.html"));
 });
 
-app.get("/api/workouts")
+app.get("/api/workouts", (req, res) => {
+    db.Workout.find({})
+        .then(dbWorkout => {
+            res.json(dbWorkout);
+        })
+        .catch(err => {
+            res.json(err);
+        });
+});
 
-app.post("/api/workouts")
+app.post("/api/workouts", (req, res) => {
+    db.Workout.create({})
+        .then(dbNewWorkout => {
+            res.json(dbNewWorkout);
+        })
+        .catch(err => {
+            res.json(err);
+        });
+});
 
-app.put("/api/workouts")
+app.put("/api/workouts/:id", ({ params, body }, res) => {
+    db.Workout.findByIdAndUpdate(
+        { id: params.id },
+        { $push: { exercise: body } }
+    )
+    .then(dbUpdateWorkout => {
+        res.json(dbUpdateWorkout);
+    })
+    .catch(err => {
+        res.json(err);
+    });
+});
 
-app.get("/api/workouts/range")
+app.get("/api/workouts/range", (req, res) => {
+    db.Workout.find({})
+        .then(dbWorkoutRange => {
+            res.json(dbWorkoutRange);
+        })
+        .catch(err => {
+            res.json(err);
+        });
+});
 
 app.listen(PORT, () => {
     console.log(`App running on port ${PORT}!`);
