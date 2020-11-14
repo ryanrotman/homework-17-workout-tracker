@@ -42,8 +42,8 @@ app.get("/api/workouts", (req, res) => {
         });
 });
 
-app.post("/api/workouts", (req, res) => {
-    db.Workout.create({})
+app.post("/api/workouts", ({ body }, res) => {
+    db.Workout.create({ body })
         .then(dbNewWorkout => {
             res.json(dbNewWorkout);
         })
