@@ -18,7 +18,7 @@ app.use(express.static("public"));
 
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", { useNewUrlParser: true });
 
-// TODO: Routes:
+// Routes:
 
 app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname + "/public/index.html"));
@@ -53,9 +53,11 @@ app.post("/api/workouts", ({ body }, res) => {
 });
 
 app.put("/api/workouts/:id", ({ params, body }, res) => {
+    // console.log("params-------", { params })
+    // console.log("body----------", body)
     db.Workout.findByIdAndUpdate(
-        { id: params.id },
-        { $push: { exercise: body } }
+        { _id: params.id },
+        { $push: { exercises: body } }
     )
     .then(dbUpdateWorkout => {
         res.json(dbUpdateWorkout);
