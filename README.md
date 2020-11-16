@@ -16,7 +16,9 @@ This application uses the following Node.js packages:
 This project is deployed on Heroku [here](https://rr-workout.herokuapp.com).
 
 ## Page Screenshots
-
+![README_ScreenShot_1](./assets/images/README_ScreenShot_1.png)
+![README_ScreenShot_2](./assets/images/README_ScreenShot_2.png)
+![README_ScreenShot_3](./assets/images/README_ScreenShot_3.png)
 
 ## Contributing
 Any and all collaboration is welcome so if you have any suggestions or thoughts for new features, please send me an email at ryan.rotman@gmail.com.
