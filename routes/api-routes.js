@@ -1,3 +1,5 @@
+const db = require("../models");
+
 // FIXME: figure out why this isn't working
 module.exports = (app) => {
     app.get("/api/workouts", (req, res) => {
