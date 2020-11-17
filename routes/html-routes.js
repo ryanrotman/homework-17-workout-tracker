@@ -1,4 +1,3 @@
-// FIXME: figure out why this isn't working
 const path = require("path");
 
 module.exports = (app) => {
